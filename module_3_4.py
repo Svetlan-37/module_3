@@ -1,9 +1,7 @@
 def single_root_words(root_word, *other_words):
-    a = root_word.upper()                   # приводим к одному (верхнему) регистру
-    b = [x.upper() for x in other_words]
     same_words = []
-    for i in b:
-        if i in a or a in i:
+    for i in other_words:
+        if i.lower() in root_word.lower() or root_word.lower() in i.lower():
             same_words.append(i)
     return same_words
 
